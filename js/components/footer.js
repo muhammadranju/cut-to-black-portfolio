@@ -78,3 +78,26 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+// Function to scroll to the top
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+
+    // Add a duration option if you want the scroll to be smooth
+    duration: 500,
+    // Add an offset option if you want to scroll to a specific place
+    offset: 0,
+  });
+}
+
+// Show the button when the user scrolls down 20px from the top
+window.onscroll = function () {
+  const button = document.getElementById("backToTop");
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    button.style.display = "block";
+  } else {
+    button.style.display = "none";
+  }
+};
