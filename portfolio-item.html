@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio - Cut to Black</title>
+    <link
+      rel="shortcut icon"
+      href="./assets/favicon/favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/components/header.css" />
+    <link rel="stylesheet" href="./css/components/footer.css" />
+    <link rel="stylesheet" href="./css/components/services.css" />
+    <style>
+      /* Fullscreen Video Styles */
+      body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+      }
+
+      .video-fullscreen-container {
+        position: relative;
+        width: 100%;
+        height: calc(100vh - 60px); /* Subtract header height */
+        overflow: hidden;
+        background-color: #000;
+      }
+
+      .video-fullscreen-container iframe {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100vw;
+        height: 100vh;
+        transform: translate(-50%, -50%);
+        border: none;
+      }
+
+      /* Make video cover the entire area maintaining aspect ratio */
+      @media (min-aspect-ratio: 16/9) {
+        .video-fullscreen-container iframe {
+          height: 56.25vw; /* 16:9 aspect ratio */
+        }
+      }
+
+      @media (max-aspect-ratio: 16/9) {
+        .video-fullscreen-container iframe {
+          width: 177.78vh; /* 16:9 aspect ratio */
+        }
+      }
+
+      /* Adjust for mobile - account for header */
+      @media (max-width: 768px) {
+        .video-fullscreen-container {
+          height: calc(100vh - 55px); /* Adjust for smaller mobile header */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Header -->
+    <header class="main-header">
+      <!-- Added hamburger menu button for mobile -->
+      <button class="mobile-menu-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-container">
+        <a href="/" class="nav-link">
+          <svg
+            class="nav-icon"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+          HOME
+        </a>
+        <a href="/portfolio.html" class="nav-link">
+          <svg
+            class="nav-icon"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <rect x="3" y="3" width="7" height="7"></rect>
+            <rect x="14" y="3" width="7" height="7"></rect>
+            <rect x="14" y="14" width="7" height="7"></rect>
+            <rect x="3" y="14" width="7" height="7"></rect>
+          </svg>
+          PORTFOLIO
+        </a>
+        <a href="/services.html" class="nav-link">
+          <svg
+            class="nav-icon"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path
+              d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+            ></path>
+          </svg>
+          SERVICES
+        </a>
+        <a href="/about.html" class="nav-link">
+          <svg
+            class="nav-icon"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+          </svg>
+          ABOUT
+        </a>
+      </nav>
+    </header>
+
+    <!-- Main Content Start - Fullscreen Video -->
+    <div class="video-fullscreen-container">
+      <iframe
+        id="srcVideo"
+        width="1080"
+        height="608"
+        src=""
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share audio"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
+    </div>
+    <!-- Main Content End -->
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-column">
+          <h4 class="footer-title">PORTFOLIO</h4>
+          <ul class="footer-links">
+            <li><a href="#films">Films</a></li>
+            <li><a href="#post-supervisor">Post Supervisor</a></li>
+            <li><a href="#commercials">Commercials</a></li>
+            <li><a href="#branded-documentaries">Branded Documentaries</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-title">CONTACT</h4>
+          <ul class="footer-links">
+            <li><a href="#cut-to-black">Cut to Black</a></li>
+            <li>2300 S. Lamar Boulevard Suite 107</li>
+            <li>Austin, Texas 78704</li>
+            <li><a href="mailto:lee@cuttoblack.com">lee@cuttoblack.com</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column social-column">
+          <div class="social-icons">
+            <a href="#" class="social-icon" aria-label="IMDb">
+              <img src="./assets/development/imdb.png" alt="IMDb" />
+            </a>
+            <a href="#" class="social-icon" aria-label="LinkedIn">
+              <img src="./assets/development/linkdin.png" alt="LinkedIn" />
+            </a>
+            <a href="#" class="social-icon" aria-label="Facebook">
+              <img src="./assets/development/facebook.png" alt="Facebook" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://player.vimeo.com/api/player.js"></script>
+    <script src="./data/data.js"></script>
+    <script>
+      // Get the current URL
+      const newData = data;
+      const urlParams = new URLSearchParams(window.location.search);
+      const id = Number(urlParams.get("id")); // "101"
+
+      const findVideo = newData.find((item) => item.id === id);
+      console.log(findVideo);
+      if (!findVideo) {
+        window.location.href = "portfolio.html";
+      } else if (findVideo.platform === "youtube") {
+        document.getElementById(
+          "srcVideo"
+        ).src = `https://www.youtube.com/embed/${findVideo.videoPath}?si=Fz9_b1rJp27jMYIh&amp;start=6"`;
+      } else if (findVideo.platform === "vimeo") {
+        document.getElementById(
+          "srcVideo"
+        ).src = `https://player.vimeo.com/video/${findVideo.videoPath}?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"`;
+      }
+
+      console.log(findVideo);
+    </script>
+    <script src="./js/components/footer.js"></script>
+  </body>
+</html>

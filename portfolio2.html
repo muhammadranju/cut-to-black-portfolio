@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio - Cut to Black</title>
+    <link rel="stylesheet" href="./css/components/header.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/components/footer.css" />
+    <style>
+      /* Portfolio Hero Section */
+      .portfolio-hero {
+        position: relative;
+        width: 100%;
+        height: 450px;
+        overflow: hidden;
+      }
+
+      .portfolio-hero-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .portfolio-hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .portfolio-hero-title {
+        font-size: 72px;
+        font-weight: 700;
+        letter-spacing: 8px;
+        color: #fff;
+        text-transform: uppercase;
+        text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.7);
+      }
+
+      /* Category Filter Section */
+      .category-section {
+        background-color: #0a0a0a;
+        padding: 30px 20px;
+        border-bottom: 1px solid #1a1a1a;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .category-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        overflow-x: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+
+      .category-container::-webkit-scrollbar {
+        display: none;
+      }
+
+      .category-label {
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        color: #999;
+        text-transform: uppercase;
+        white-space: nowrap;
+        margin-right: 20px;
+      }
+
+      .category-btn {
+        padding: 10px 24px;
+        background-color: transparent;
+        color: #999;
+        border: 1px solid #333;
+        border-radius: 4px;
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+        text-transform: uppercase;
+      }
+
+      .category-btn:hover {
+        background-color: rgba(255, 255, 255, 0.05);
+        color: #fff;
+        border-color: #555;
+      }
+
+      .category-btn.active {
+        background-color: #d4af37;
+        color: #000;
+        border-color: #d4af37;
+        font-weight: 600;
+      }
+
+      /* Portfolio Grid Section */
+      .portfolio-grid-section {
+        background-color: #000;
+        padding: 60px 20px 80px;
+        min-height: 60vh;
+      }
+
+      .portfolio-grid-container {
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      .portfolio-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+
+      .portfolio-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        aspect-ratio: 3/4;
+        background-color: #1a1a1a;
+        cursor: pointer;
+        opacity: 0;
+        transform: scale(0.9);
+        animation: fadeInScale 0.5s ease forwards;
+      }
+
+      .portfolio-item:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+      .portfolio-item:nth-child(2) {
+        animation-delay: 0.15s;
+      }
+      .portfolio-item:nth-child(3) {
+        animation-delay: 0.2s;
+      }
+      .portfolio-item:nth-child(4) {
+        animation-delay: 0.25s;
+      }
+      .portfolio-item:nth-child(5) {
+        animation-delay: 0.3s;
+      }
+      .portfolio-item:nth-child(6) {
+        animation-delay: 0.35s;
+      }
+      .portfolio-item:nth-child(7) {
+        animation-delay: 0.4s;
+      }
+      .portfolio-item:nth-child(8) {
+        animation-delay: 0.45s;
+      }
+      .portfolio-item:nth-child(9) {
+        animation-delay: 0.5s;
+      }
+
+      @keyframes fadeInScale {
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      .portfolio-item-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.5s ease;
+      }
+
+      .portfolio-item:hover .portfolio-item-image {
+        transform: scale(1.08);
+      }
+
+      .portfolio-item-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.9) 0%,
+          rgba(0, 0, 0, 0.4) 50%,
+          transparent 100%
+        );
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 24px;
+      }
+
+      .portfolio-item:hover .portfolio-item-overlay {
+        opacity: 1;
+      }
+
+      .portfolio-item-title {
+        font-size: 18px;
+        font-weight: 600;
+        color: #fff;
+        margin-bottom: 8px;
+        transform: translateY(20px);
+        transition: transform 0.3s ease 0.1s;
+      }
+
+      .portfolio-item:hover .portfolio-item-title {
+        transform: translateY(0);
+      }
+
+      .portfolio-item-category {
+        font-size: 12px;
+        font-weight: 500;
+        color: #d4af37;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        transform: translateY(20px);
+        transition: transform 0.3s ease 0.15s;
+      }
+
+      .portfolio-item:hover .portfolio-item-category {
+        transform: translateY(0);
+      }
+
+      /* Loading State */
+      .loading {
+        text-align: center;
+        padding: 60px 20px;
+        font-size: 16px;
+        color: #999;
+      }
+
+      /* No Results */
+      .no-results {
+        text-align: center;
+        padding: 80px 20px;
+        font-size: 18px;
+        color: #999;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 1200px) {
+        .portfolio-grid {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 16px;
+        }
+      }
+
+      @media (max-width: 1024px) {
+        .portfolio-hero {
+          height: 380px;
+        }
+
+        .portfolio-hero-title {
+          font-size: 56px;
+          letter-spacing: 6px;
+        }
+
+        .portfolio-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .portfolio-hero {
+          height: 320px;
+        }
+
+        .portfolio-hero-title {
+          font-size: 42px;
+          letter-spacing: 4px;
+        }
+
+        .category-section {
+          padding: 20px 16px;
+        }
+
+        .category-label {
+          font-size: 11px;
+          margin-right: 12px;
+        }
+
+        .category-btn {
+          padding: 8px 18px;
+          font-size: 11px;
+        }
+
+        .portfolio-grid-section {
+          padding: 40px 16px 60px;
+        }
+
+        .portfolio-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 12px;
+        }
+
+        .portfolio-item-overlay {
+          padding: 16px;
+        }
+
+        .portfolio-item-title {
+          font-size: 16px;
+        }
+
+        .portfolio-item-category {
+          font-size: 11px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .portfolio-hero {
+          height: 260px;
+        }
+
+        .portfolio-hero-title {
+          font-size: 32px;
+          letter-spacing: 3px;
+        }
+
+        .category-container {
+          gap: 6px;
+        }
+
+        .category-label {
+          display: none;
+        }
+
+        .category-btn {
+          padding: 8px 16px;
+          font-size: 10px;
+        }
+
+        .portfolio-grid {
+          grid-template-columns: 1fr;
+          gap: 16px;
+        }
+
+        .portfolio-grid-section {
+          padding: 30px 16px 50px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Main Content Start -->
+    <!-- Portfolio Hero Section -->
+    <section class="portfolio-hero">
+      <img
+        src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&h=600&fit=crop&q=80"
+        alt="Portfolio hero"
+        class="portfolio-hero-image"
+      />
+      <div class="portfolio-hero-overlay">
+        <h1 class="portfolio-hero-title">PORTFOLIO</h1>
+      </div>
+    </section>
+
+    <!-- Category Filter Section -->
+    <section class="category-section">
+      <div class="category-container">
+        <span class="category-btn" data-category="all">ALL</span>
+        <button class="category-btn active" data-category="films">Films</button>
+        <button class="category-btn" data-category="post-supervisor">
+          Post Supervisor
+        </button>
+        <button class="category-btn" data-category="editor">Editor</button>
+        <button class="category-btn" data-category="branded-documentaries">
+          Branded Documentaries
+        </button>
+        <button class="category-btn" data-category="commercials">
+          Commercials
+        </button>
+        <button class="category-btn" data-category="motion-graphics">
+          Motion Graphics
+        </button>
+      </div>
+    </section>
+
+    <!-- Portfolio Grid Section -->
+    <section class="portfolio-grid-section">
+      <div class="portfolio-grid-container">
+        <div class="portfolio-grid" id="portfolioGrid">
+          <!-- Portfolio items will be dynamically inserted here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content End -->
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-column">
+          <h4 class="footer-title">PORTFOLIO</h4>
+          <ul class="footer-links">
+            <li><a href="#films">Films</a></li>
+            <li><a href="#post-supervisor">Post Supervisor</a></li>
+            <li><a href="#commercials">Commercials</a></li>
+            <li><a href="#branded-documentaries">Branded Documentaries</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-title">CONTACT</h4>
+          <ul class="footer-links">
+            <li><a href="#cut-to-black">Cut to Black</a></li>
+            <li>2300 S. Lamar Boulevard Suite 107</li>
+            <li>Austin, Texas 78704</li>
+            <li><a href="mailto:lee@cuttoblack.com">lee@cuttoblack.com</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column social-column">
+          <div class="social-icons">
+            <a href="#" class="social-icon" aria-label="IMDb">
+              <img src="./assets/development/imdb.png" alt="IMDb" />
+            </a>
+            <a href="#" class="social-icon" aria-label="LinkedIn">
+              <img src="./assets/development/linkdin.png" alt="LinkedIn" />
+            </a>
+            <a href="#" class="social-icon" aria-label="Facebook">
+              <img src="./assets/development/facebook.png" alt="Facebook" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="./js/components/footer.js"></script>
+    <script>
+      // Portfolio Data (JSON format - easily editable)
+      const portfolioData = [
+        {
+          id: 1,
+          title: "Burnin' Trail",
+          category: "films",
+          categories: ["all", "films", "editor"],
+          image:
+            "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=800&h=1000&fit=crop&q=80",
+        },
+        {
+          id: 2,
+          title: "Carousel",
+          category: "films",
+          categories: ["all", "films", "post-supervisor"],
+          image:
+            "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800&h=1000&fit=crop&q=80",
+        },
+        {
+          id: 3,
+          title: "Wear The Future",
+          category: "commercials",
+          categories: ["all", "commercials", "motion-graphics"],
+          image:
+            "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=1000&fit=crop&q=80",
+        },
+        {
+          id: 4,
+          title: "Action Hero",
+          category: "films",
+          categories: ["all", "films", "editor"],
+          image:
+            "https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=800&h=1000&fit=crop&q=80",
+        },
+        {
+          id: 5,
+          title: "NFL Evolution",
+          category: "commercials",
+          categories: ["all", "commercials", "motion-graphics"],
+          image:
+            "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?w=800&h=1000&fit=crop&q=80",
+        },
+        {
+          id: 6,
+          title: "Robotic Gaming",
+          category: "motion-graphics",
+          categories: ["all", "motion-graphics", "commercials"],
+          image:
+            "https://images.unsplash.com/photo-1589254065878-42c9da997008?w=800&h=1000&fit=crop&q=80",
+        },
+        {
+          id: 7,
+          title: "Champion 25",
+          category: "commercials",
+          categories: ["all", "commercials", "motion-graphics"],
+          image:
+            "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800&h=1000&fit=crop&q=80",
+        },
+        {
+          id: 8,
+          title: "Coffee Story",
+          category: "branded-documentaries",
+          categories: ["all", "branded-documentaries", "editor"],
+          image:
+            "https://images.unsplash.com/photo-1511920170033-f8396924c348?w=800&h=1000&fit=crop&q=80",
+        },
+        {
+          id: 9,
+          title: "No Rules",
+          category: "commercials",
+          categories: ["all", "commercials", "post-supervisor"],
+          image:
+            "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&h=1000&fit=crop&q=80",
+        },
+        {
+          id: 10,
+          title: "Rivals in Love",
+          category: "films",
+          categories: ["all", "films", "editor"],
+          image:
+            "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=800&h=1000&fit=crop&q=80",
+        },
+        {
+          id: 11,
+          title: "Urban Stories",
+          category: "branded-documentaries",
+          categories: ["all", "branded-documentaries", "post-supervisor"],
+          image:
+            "https://images.unsplash.com/photo-1514565131-fce0801e5785?w=800&h=1000&fit=crop&q=80",
+        },
+        {
+          id: 12,
+          title: "Tech Innovation",
+          category: "commercials",
+          categories: ["all", "commercials", "motion-graphics"],
+          image:
+            "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&h=1000&fit=crop&q=80",
+        },
+      ];
+
+      // Get DOM elements
+      const portfolioGrid = document.getElementById("portfolioGrid");
+      const categoryButtons = document.querySelectorAll(".category-btn");
+
+      // Render portfolio items
+      function renderPortfolio(filter = "all") {
+        // Clear grid with fade out
+        portfolioGrid.style.opacity = "0";
+
+        setTimeout(() => {
+          portfolioGrid.innerHTML = "";
+
+          // Filter data
+          const filteredData = portfolioData.filter((item) =>
+            item.categories.includes(filter)
+          );
+
+          // Check if no results
+          if (filteredData.length === 0) {
+            portfolioGrid.innerHTML =
+              '<div class="no-results">No projects found in this category.</div>';
+            portfolioGrid.style.opacity = "1";
+            return;
+          }
+
+          // Create portfolio items
+          filteredData.forEach((item, index) => {
+            const portfolioItem = document.createElement("div");
+            portfolioItem.className = "portfolio-item";
+            portfolioItem.style.animationDelay = `${index * 0.05}s`;
+
+            portfolioItem.innerHTML = `
+                        <img src="${item.image}" alt="${
+              item.title
+            }" class="portfolio-item-image">
+                        <div class="portfolio-item-overlay">
+                            <h3 class="portfolio-item-title">${item.title}</h3>
+                            <p class="portfolio-item-category">${item.category.replace(
+                              "-",
+                              " "
+                            )}</p>
+                        </div>
+                    `;
+
+            portfolioGrid.appendChild(portfolioItem);
+          });
+
+          // Fade in
+          portfolioGrid.style.opacity = "1";
+        }, 300);
+      }
+
+      // Category button click handlers
+      categoryButtons.forEach((button) => {
+        button.addEventListener("click", function () {
+          // Remove active class from all buttons
+          categoryButtons.forEach((btn) => btn.classList.remove("active"));
+
+          // Add active class to clicked button
+          this.classList.add("active");
+
+          // Get category
+          const category = this.getAttribute("data-category");
+
+          // Render filtered portfolio
+          renderPortfolio(category);
+        });
+      });
+
+      // Initial render
+      renderPortfolio("all");
+
+      // Smooth scroll reveal for portfolio items (optional enhancement)
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "scale(1)";
+          }
+        });
+      }, observerOptions);
+
+      // Re-observe items after filter change
+      function observeItems() {
+        setTimeout(() => {
+          document.querySelectorAll(".portfolio-item").forEach((item) => {
+            observer.observe(item);
+          });
+        }, 350);
+      }
+
+      observeItems();
+    </script>
+  </body>
+</html>

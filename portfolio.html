@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio - Cut to Black</title>
+    <link
+      rel="shortcut icon"
+      href="./assets/favicon/favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/components/header.css" />
+    <link rel="stylesheet" href="./css/components/footer.css" />
+    <link rel="stylesheet" href="./css/components/portfolio.css" />
+    <link rel="stylesheet" href="./css/components/responsive.css" />
+  </head>
+  <body>
+    <!-- Navigation Header -->
+    <header class="main-header">
+      <!-- Added hamburger menu button for mobile -->
+      <button class="mobile-menu-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-container">
+        <a href="/" class="nav-link">
+          <svg
+            class="nav-icon"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+          HOME
+        </a>
+        <a href="/portfolio.html" class="nav-link active">
+          <svg
+            class="nav-icon"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <rect x="3" y="3" width="7" height="7"></rect>
+            <rect x="14" y="3" width="7" height="7"></rect>
+            <rect x="14" y="14" width="7" height="7"></rect>
+            <rect x="3" y="14" width="7" height="7"></rect>
+          </svg>
+          PORTFOLIO
+        </a>
+        <a href="/services.html" class="nav-link">
+          <svg
+            class="nav-icon"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path
+              d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+            ></path>
+          </svg>
+          SERVICES
+        </a>
+        <a href="/about.html" class="nav-link">
+          <svg
+            class="nav-icon"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+          </svg>
+          ABOUT
+        </a>
+      </nav>
+    </header>
+
+    <!-- Main Content Start -->
+    <!-- Portfolio Hero Section -->
+    <section class="portfolio-hero">
+      <div class="hero-overlay"></div>
+      <h1 class="hero-title">PORTFOLIO</h1>
+    </section>
+
+    <!-- Filter Navigation -->
+    <nav class="filter-nav">
+      <div class="filter-container">
+        <button class="filter-btn active" data-filter="all">ALL</button>
+        <span class="filter-separator">/</span>
+        <button class="filter-btn" data-filter="films">FILMS</button>
+        <span class="filter-separator">/</span>
+        <button class="filter-btn" data-filter="post-supervisor">
+          POST SUPERVISOR
+        </button>
+        <span class="filter-separator">/</span>
+        <button class="filter-btn" data-filter="editor">EDITOR</button>
+        <span class="filter-separator">/</span>
+        <button class="filter-btn" data-filter="branded-documentaries">
+          BRANDED DOCUMENTARIES
+        </button>
+        <span class="filter-separator">/</span>
+        <button class="filter-btn" data-filter="commercials">
+          COMMERCIALS
+        </button>
+        <span class="filter-separator">/</span>
+        <button class="filter-btn" data-filter="motion-graphics">
+          MOTION GRAPHICS
+        </button>
+      </div>
+    </nav>
+
+    <!-- Portfolio Grid -->
+    <section class="portfolio-section">
+      <div class="portfolio-grid" id="portfolioGrid">
+        <!-- Portfolio items will be dynamically inserted here -->
+      </div>
+    </section>
+    <!-- Main Content End -->
+    <!-- Footer -->
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-column">
+          <h4 class="footer-title">PORTFOLIO</h4>
+          <ul class="footer-links">
+            <li><a href="#films">Films</a></li>
+            <li><a href="#post-supervisor">Post Supervisor</a></li>
+            <li><a href="#commercials">Commercials</a></li>
+            <li><a href="#branded-documentaries">Branded Documentaries</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-title">CONTACT</h4>
+          <ul class="footer-links">
+            <li><a href="#cut-to-black">Cut to Black</a></li>
+            <li>2300 S. Lamar Boulevard Suite 107</li>
+            <li>Austin, Texas 78704</li>
+            <li><a href="mailto:lee@cuttoblack.com">lee@cuttoblack.com</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column social-column">
+          <div class="social-icons">
+            <a href="#" class="social-icon" aria-label="IMDb">
+              <img src="./assets/development/imdb.png" alt="IMDb" />
+            </a>
+            <a href="#" class="social-icon" aria-label="LinkedIn">
+              <img src="./assets/development/linkdin.png" alt="LinkedIn" />
+            </a>
+            <a href="#" class="social-icon" aria-label="Facebook">
+              <img src="./assets/development/facebook.png" alt="Facebook" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="./data/data.js"></script>
+    <script src="./js/components/portfolio-script.js"></script>
+    <script src="./js/components/footer.js"></script>
+  </body>
+</html>

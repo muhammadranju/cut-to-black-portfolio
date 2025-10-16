@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home - Cut to Black</title>
+    <link
+      rel="shortcut icon"
+      href="./assets/favicon/favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/components/header.css" />
+    <link rel="stylesheet" href="./css/components/footer.css" />
+    <link rel="stylesheet" href="./css/components/home.css" />
+    <link rel="stylesheet" href="./css/components/responsive.css" />
+  </head>
+  <body>
+    <!-- Navigation Header -->
+    <header class="main-header">
+      <!-- Added hamburger menu button for mobile -->
+      <button class="mobile-menu-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="logo">
+        <img src="./assets/development/logo.png" alt="logo" />
+      </div>
+      <nav class="nav-container">
+        <a href="/" class="nav-link active">
+          <svg
+            class="nav-icon"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+          HOME
+        </a>
+        <a href="/portfolio.html" class="nav-link">
+          <svg
+            class="nav-icon"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <rect x="3" y="3" width="7" height="7"></rect>
+            <rect x="14" y="3" width="7" height="7"></rect>
+            <rect x="14" y="14" width="7" height="7"></rect>
+            <rect x="3" y="14" width="7" height="7"></rect>
+          </svg>
+          PORTFOLIO
+        </a>
+        <a href="/services.html" class="nav-link">
+          <svg
+            class="nav-icon"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path
+              d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+            ></path>
+          </svg>
+          SERVICES
+        </a>
+        <a href="/about.html" class="nav-link">
+          <svg
+            class="nav-icon"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+          </svg>
+          ABOUT
+        </a>
+      </nav>
+    </header>
+
+    <!-- Video Hero Section -->
+    <section class="hero-section">
+      <div class="video-container" id="videoContainer">
+        <iframe
+          id="vimeoVideo"
+          frameborder="0"
+          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+          allowfullscreen
+          title="Jail to Jobs Testimonial"
+        ></iframe>
+
+        <!-- Custom Play/Pause Icon -->
+        <div class="play-pause-icon" id="playPauseIcon">
+          <div class="pause-icon" id="pauseIcon">
+            <div class="pause-bar"></div>
+            <div class="pause-bar"></div>
+          </div>
+          <div class="play-icon" id="playIcon" style="display: none"></div>
+        </div>
+      </div>
+      <div class="video-overlay"></div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+      <div class="services-container">
+        <div class="service-item">
+          <div class="service-icon">
+            <svg
+              width="60"
+              height="60"
+              viewBox="0 0 80 80"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="40" cy="40" r="30"></circle>
+              <circle cx="40" cy="40" r="20"></circle>
+              <circle cx="40" cy="40" r="10"></circle>
+              <line x1="40" y1="10" x2="40" y2="25"></line>
+              <line x1="40" y1="55" x2="40" y2="70"></line>
+              <line x1="10" y1="40" x2="25" y2="40"></line>
+              <line x1="55" y1="40" x2="70" y2="40"></line>
+              <path
+                d="M 50 25 L 60 15 M 25 50 L 15 60 M 50 55 L 60 65 M 25 30 L 15 20"
+              ></path>
+              <circle cx="58" cy="22" r="6"></circle>
+              <circle cx="22" cy="58" r="6"></circle>
+              <circle cx="58" cy="58" r="6"></circle>
+              <circle cx="22" cy="22" r="6"></circle>
+            </svg>
+          </div>
+          <h3 class="service-title">POST SUPERVISION</h3>
+        </div>
+
+        <div class="service-item">
+          <div class="service-icon">
+            <svg
+              width="60"
+              height="60"
+              viewBox="0 0 80 80"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="40" cy="40" r="30"></circle>
+              <polygon points="35,28 35,52 55,40" fill="currentColor"></polygon>
+            </svg>
+          </div>
+          <h3 class="service-title">EDITORIAL</h3>
+        </div>
+
+        <div class="service-item">
+          <div class="service-icon">
+            <svg
+              width="60"
+              height="60"
+              viewBox="0 0 80 80"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="40" cy="40" r="30"></circle>
+              <line x1="40" y1="25" x2="40" y2="55" stroke-width="3"></line>
+              <line x1="25" y1="40" x2="55" y2="40" stroke-width="3"></line>
+            </svg>
+          </div>
+          <h3 class="service-title">MOTION/VFX</h3>
+        </div>
+
+        <div class="service-item">
+          <div class="service-icon">
+            <svg
+              width="60"
+              height="60"
+              viewBox="0 0 80 80"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="40" cy="40" r="30"></circle>
+              <circle cx="40" cy="32" r="12" fill="currentColor"></circle>
+              <path
+                d="M 40 44 Q 50 50, 55 60 L 25 60 Q 30 50, 40 44"
+                fill="currentColor"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="service-title">COLOR</h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-column">
+          <h4 class="footer-title">PORTFOLIO</h4>
+          <ul class="footer-links">
+            <li><a href="#films">Films</a></li>
+            <li><a href="#post-supervisor">Post Supervisor</a></li>
+            <li><a href="#commercials">Commercials</a></li>
+            <li><a href="#branded-documentaries">Branded Documentaries</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-title">CONTACT</h4>
+          <ul class="footer-links">
+            <li><a href="#cut-to-black">Cut to Black</a></li>
+            <li>2300 S. Lamar Boulevard Suite 107</li>
+            <li>Austin, Texas 78704</li>
+            <li><a href="mailto:lee@cuttoblack.com">lee@cuttoblack.com</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column social-column">
+          <div class="social-icons">
+            <a href="#" class="social-icon" aria-label="IMDb">
+              <img src="./assets/development/imdb.png" alt="IMDb" />
+            </a>
+            <a href="#" class="social-icon" aria-label="LinkedIn">
+              <img src="./assets/development/linkdin.png" alt="LinkedIn" />
+            </a>
+            <a href="#" class="social-icon" aria-label="Facebook">
+              <img src="./assets/development/facebook.png" alt="Facebook" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Vimeo Player API -->
+    <script src="https://player.vimeo.com/api/player.js"></script>
+    <script src="./js/components/home.js"></script>
+    <script src="./js/modules/home-video.js"></script>
+    <script src="./js/components/footer.js"></script>
+  </body>
+</html>

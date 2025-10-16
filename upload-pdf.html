@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio - Cut to Black</title>
+    <link
+      rel="shortcut icon"
+      href="./assets/favicon/favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/components/header.css" />
+    <link rel="stylesheet" href="./css/components/footer.css" />
+    <link rel="stylesheet" href="./css/components/responsive.css" />
+    <link rel="stylesheet" href="./css/components/upload-pdf.css" />
+  </head>
+  <body>
+    <!-- Navigation Header -->
+    <header class="main-header">
+      <!-- Added hamburger menu button for mobile -->
+      <button class="mobile-menu-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div>
+        <img src="./assets/development/logo.png" alt="logo" />
+      </div>
+      <nav class="nav-container">
+        <a href="/" class="nav-link">
+          <svg
+            class="nav-icon"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+          HOME
+        </a>
+        <a href="/portfolio.html" class="nav-link">
+          <svg
+            class="nav-icon"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <rect x="3" y="3" width="7" height="7"></rect>
+            <rect x="14" y="3" width="7" height="7"></rect>
+            <rect x="14" y="14" width="7" height="7"></rect>
+            <rect x="3" y="14" width="7" height="7"></rect>
+          </svg>
+          PORTFOLIO
+        </a>
+        <a href="/services.html" class="nav-link">
+          <svg
+            class="nav-icon"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path
+              d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+            ></path>
+          </svg>
+          SERVICES
+        </a>
+        <a href="/about.html" class="nav-link">
+          <svg
+            class="nav-icon"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+          </svg>
+          ABOUT
+        </a>
+      </nav>
+    </header>
+
+    <!-- Main Content Start -->
+    <main>
+      <section class="upload-form-section">
+        <div class="upload-form-container">
+          <form id="uploadForm">
+            <!-- Full Name -->
+            <div class="form-group">
+              <label class="form-label" for="fullName">Full Name</label>
+              <input
+                type="text"
+                id="fullName"
+                name="fullName"
+                class="form-input"
+                placeholder="Enter Your Name"
+                required
+              />
+            </div>
+
+            <!-- Phone Number -->
+            <div class="form-group">
+              <label class="form-label" for="phoneNumber">Phone Number</label>
+              <input
+                type="tel"
+                id="phoneNumber"
+                name="phoneNumber"
+                class="form-input"
+                placeholder="Enter Your Number"
+                required
+              />
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+              <label class="form-label" for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="form-input"
+                placeholder="Enter your Email"
+                required
+              />
+            </div>
+
+            <!-- Upload PDF -->
+            <div class="upload-area-wrapper">
+              <label class="form-label">Upload PDF</label>
+              <div class="upload-area" id="uploadArea">
+                <div class="upload-icon-wrapper">
+                  <svg
+                    class="upload-icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="17 8 12 3 7 8"></polyline>
+                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                  </svg>
+                </div>
+                <p class="upload-text">
+                  <span class="highlight">Click here</span> to upload your PDF
+                </p>
+                <input
+                  type="file"
+                  id="pdfFile"
+                  name="pdfFile"
+                  class="file-input"
+                  accept=".pdf"
+                />
+              </div>
+
+              <!-- File Preview -->
+              <div class="file-preview" id="filePreview">
+                <div class="file-info">
+                  <div class="file-icon">PDF</div>
+                  <div class="file-details">
+                    <div class="file-name" id="fileName"></div>
+                    <div class="file-size" id="fileSize"></div>
+                  </div>
+                </div>
+                <button type="button" class="file-remove" id="removeFile">
+                  ✕
+                </button>
+              </div>
+            </div>
+
+            <!-- Success Message -->
+            <div class="success-message" id="successMessage">
+              ✓ Form submitted successfully!
+            </div>
+
+            <!-- Error Message -->
+            <div class="error-message" id="errorMessage">
+              Please fill in all fields and upload a PDF file.
+            </div>
+
+            <!-- Submit Button -->
+            <div class="submit-button-wrapper">
+              <button type="submit" class="submit-button" id="submitButton">
+                Upload
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+    <!-- Main Content End -->
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-column">
+          <h4 class="footer-title">PORTFOLIO</h4>
+          <ul class="footer-links">
+            <li><a href="#films">Films</a></li>
+            <li><a href="#post-supervisor">Post Supervisor</a></li>
+            <li><a href="#commercials">Commercials</a></li>
+            <li><a href="#branded-documentaries">Branded Documentaries</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-title">CONTACT</h4>
+          <ul class="footer-links">
+            <li><a href="#cut-to-black">Cut to Black</a></li>
+            <li>2300 S. Lamar Boulevard Suite 107</li>
+            <li>Austin, Texas 78704</li>
+            <li><a href="mailto:lee@cuttoblack.com">lee@cuttoblack.com</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column social-column">
+          <div class="social-icons">
+            <a href="#" class="social-icon" aria-label="IMDb">
+              <img src="./assets/development/imdb.png" alt="IMDb" />
+            </a>
+            <a href="#" class="social-icon" aria-label="LinkedIn">
+              <img src="./assets/development/linkdin.png" alt="LinkedIn" />
+            </a>
+            <a href="#" class="social-icon" aria-label="Facebook">
+              <img src="./assets/development/facebook.png" alt="Facebook" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./js/components/footer.js"></script>
+    <script src="./js/components/upload-pdf.js"></script>
+  </body>
+</html>
