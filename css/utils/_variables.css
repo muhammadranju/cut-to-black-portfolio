@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --gold: #c9a961;
+  --dark: #0a0a0a;
+  --light: #ffffff;
+  --gray: #333;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background: var(--dark);
+  color: var(--light);
+  overflow-x: hidden;
+}

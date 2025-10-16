@@ -1,0 +1,405 @@
+/* Portfolio Hero Section */
+.portfolio-hero {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  min-height: 400px;
+  background-image: url("../../assets/development/services.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.hero-title {
+  position: relative;
+  z-index: 2;
+  font-size: 4rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #fff;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Filter Navigation */
+.filter-nav {
+  background-color: #1a1a1a;
+  padding: 20px 0;
+  border-bottom: 1px solid #333;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.filter-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filter-btn {
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  padding: 8px 12px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.filter-btn:hover {
+  color: #d4af37;
+}
+
+.filter-btn.active {
+  color: #d4af44;
+  color: #d4af44;
+  color: #d4af44;
+}
+
+.filter-separator {
+  color: #555;
+  font-size: 0.9rem;
+}
+
+/* Portfolio Section */
+.portfolio-section {
+  padding: 60px 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Portfolio Item */
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #1a1a1a;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: scaleIn 0.5s ease-out backwards;
+  aspect-ratio: 16 / 9; /* Uniform aspect ratio for video embeds like YouTube */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.portfolio-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+}
+
+/* Remove spanning classes for uniform single card sizes */
+.portfolio-item.large,
+.portfolio-item.wide,
+.portfolio-item.tall {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+/* For YouTube video embeds */
+.portfolio-item iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 8px;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.portfolio-item:hover iframe {
+  transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+.portfolio-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0) 50%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+  opacity: 1;
+}
+
+.portfolio-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: #fff;
+}
+
+.portfolio-category {
+  font-size: 0.85rem;
+  color: #d4af37;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Hidden class for filtering */
+.portfolio-item.hidden {
+  display: none;
+}
+
+/* Responsive Design */
+
+/* Large Desktop (1400px+) */
+@media (min-width: 1400px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+  }
+
+  .hero-title {
+    font-size: 5rem;
+  }
+}
+
+/* Desktop/Laptop (1024px - 1399px) */
+@media (max-width: 1399px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+
+/* Tablet (768px - 1023px) */
+@media (max-width: 1023px) {
+  .portfolio-hero {
+    height: 50vh;
+    min-height: 350px;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .filter-container {
+    overflow-x: auto;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    padding: 0 15px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .filter-container::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .filter-container::-webkit-scrollbar-track {
+    background: #1a1a1a;
+  }
+
+  .filter-container::-webkit-scrollbar-thumb {
+    background: #d4af37;
+    border-radius: 2px;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .portfolio-section {
+    padding: 40px 15px;
+  }
+
+  .filter-btn {
+    font-size: 0.85rem;
+    padding: 6px 10px;
+  }
+}
+
+/* Mobile Large (481px - 767px) */
+@media (max-width: 767px) {
+  .portfolio-hero {
+    height: 40vh;
+    min-height: 300px;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+    letter-spacing: 0.08em;
+  }
+
+  .filter-nav {
+    padding: 15px 0;
+  }
+
+  .filter-container {
+    gap: 8px;
+    padding: 0 10px;
+  }
+
+  .filter-btn {
+    font-size: 0.8rem;
+    padding: 6px 8px;
+  }
+
+  .filter-separator {
+    font-size: 0.8rem;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .portfolio-section {
+    padding: 30px 10px;
+  }
+
+  .portfolio-title {
+    font-size: 1rem;
+  }
+
+  .portfolio-category {
+    font-size: 0.75rem;
+  }
+
+  .portfolio-overlay {
+    padding: 15px;
+  }
+}
+
+/* Mobile Small (<480px) */
+@media (max-width: 480px) {
+  .portfolio-hero {
+    height: 35vh;
+    min-height: 250px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+    letter-spacing: 0.05em;
+  }
+
+  .filter-nav {
+    padding: 12px 0;
+  }
+
+  .filter-btn {
+    font-size: 0.75rem;
+    padding: 5px 8px;
+  }
+
+  .filter-separator {
+    font-size: 0.75rem;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .portfolio-section {
+    padding: 25px 10px;
+  }
+
+  .portfolio-item {
+    aspect-ratio: 16 / 9;
+  }
+
+  .portfolio-title {
+    font-size: 0.95rem;
+  }
+
+  .portfolio-category {
+    font-size: 0.7rem;
+  }
+}
+
+/* Extra Small Mobile (<375px) */
+@media (max-width: 374px) {
+  .hero-title {
+    font-size: 1.75rem;
+  }
+
+  .filter-btn {
+    font-size: 0.7rem;
+    padding: 4px 6px;
+  }
+}
+
+/* Landscape Mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .portfolio-hero {
+    height: 80vh;
+    min-height: 300px;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+}
