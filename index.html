@@ -6,7 +6,7 @@
     <title>Home - Cut to Black</title>
     <link
       rel="shortcut icon"
-      href="./assets/favicon/favicon.ico"
+      href="./assets/development/favicon/favicon.ico"
       type="image/x-icon"
     />
     <link rel="stylesheet" href="./css/main.css" />
@@ -14,6 +14,276 @@
     <link rel="stylesheet" href="./css/components/footer.css" />
     <link rel="stylesheet" href="./css/components/home.css" />
     <link rel="stylesheet" href="./css/components/responsive.css" />
+    <style>
+      .section {
+        padding: 60px 0;
+        text-align: center;
+      }
+
+      .section-title {
+        font-size: 2.5rem;
+        color: #d4af37;
+        margin-bottom: 30px;
+        font-weight: bold;
+      }
+
+      /* How It Works */
+      .steps-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin-top: 10px;
+      }
+
+      .step-card {
+        background: #111;
+        padding: 40px 20px;
+        border-radius: 10px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid #333;
+      }
+
+      .step-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(255, 140, 0, 0.2);
+      }
+
+      .step-icon {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin-bottom: 20px;
+        object-fit: cover;
+      }
+
+      .step-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        color: #d4af37;
+      }
+
+      .step-card p {
+        color: #ccc;
+      }
+
+      /* Why Choose Us */
+      .features-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin-top: 20px;
+      }
+
+      .feature-card {
+        background: #111;
+        padding: 40px 20px;
+        border-radius: 10px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid #333;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .feature-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: #d4af37;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(255, 140, 0, 0.1);
+      }
+
+      .feature-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        margin: 0 auto 20px;
+        object-fit: cover;
+        display: block;
+      }
+
+      .feature-card h3 {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+        color: #d4af37;
+      }
+
+      .feature-card p {
+        color: #ccc;
+      }
+
+      /* Testimonials */
+      .testimonials-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 20px;
+      }
+
+      .testimonial-card {
+        background: #111;
+        padding: 30px;
+        border-radius: 10px;
+        text-align: left;
+        transition: transform 0.3s ease;
+        border: 1px solid #333;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .testimonial-card:hover {
+        transform: scale(1.02);
+      }
+
+      .testimonial-avatar {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin-bottom: 15px;
+        object-fit: cover;
+      }
+
+      .testimonial-name {
+        font-size: 1.2rem;
+        color: #d4af37;
+        margin-bottom: 10px;
+      }
+
+      .stars {
+        color: #d4af37;
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+      }
+
+      .testimonial-text {
+        color: #ccc;
+        font-style: italic;
+        text-align: center;
+      }
+
+      /* FAQs */
+      .faqs-container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .faq-item {
+        background: #111;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        overflow: hidden;
+        border: 1px solid #333;
+      }
+
+      .question {
+        padding: 20px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.1rem;
+        font-weight: bold;
+        color: #d4af37;
+        transition: background 0.3s ease;
+      }
+
+      .question:hover {
+        background: #222;
+      }
+
+      .toggle {
+        font-size: 1.5rem;
+        transition: transform 0.3s ease;
+      }
+
+      .answer {
+        max-height: 0;
+        overflow: hidden;
+        padding: 0 20px;
+        background: #1a1a1a;
+        transition: max-height 0.3s ease, padding 0.3s ease;
+      }
+
+      .answer.active {
+        max-height: 200px;
+        padding: 20px;
+      }
+
+      /* Animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .section {
+        animation: fadeInUp 0.8s ease-out;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .section-title {
+          font-size: 2rem;
+        }
+
+        .steps-container,
+        .features-container,
+        .testimonials-container {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+
+        .step-card,
+        .feature-card {
+          padding: 30px 15px;
+        }
+
+        .testimonial-card {
+          padding: 20px;
+        }
+
+        main {
+          padding: 0 10px;
+        }
+
+        .section {
+          padding: 40px 0;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .section-title {
+          font-size: 1.8rem;
+        }
+
+        .step-icon {
+          width: 60px;
+          height: 60px;
+        }
+
+        .feature-icon {
+          width: 50px;
+          height: 50px;
+        }
+
+        .testimonial-avatar {
+          width: 60px;
+          height: 60px;
+        }
+      }
+    </style>
   </head>
   <body>
     <!-- Navigation Header -->
@@ -97,118 +367,253 @@
       </nav>
     </header>
 
-    <!-- Video Hero Section -->
-    <section class="hero-section">
-      <div class="video-container" id="videoContainer">
-        <iframe
-          id="vimeoVideo"
-          frameborder="0"
-          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-          allowfullscreen
-          title="Jail to Jobs Testimonial"
-        ></iframe>
+    <main>
+      <!-- Video Hero Section -->
+      <section class="hero-section">
+        <div class="video-container" id="videoContainer">
+          <iframe
+            id="vimeoVideo"
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+            allowfullscreen
+            title="Jail to Jobs Testimonial"
+          ></iframe>
 
-        <!-- Custom Play/Pause Icon -->
-        <div class="play-pause-icon" id="playPauseIcon">
-          <div class="pause-icon" id="pauseIcon">
-            <div class="pause-bar"></div>
-            <div class="pause-bar"></div>
+          <!-- Custom Play/Pause Icon -->
+          <div class="play-pause-icon" id="playPauseIcon">
+            <div class="pause-icon" id="pauseIcon">
+              <div class="pause-bar"></div>
+              <div class="pause-bar"></div>
+            </div>
+            <div class="play-icon" id="playIcon" style="display: none"></div>
           </div>
-          <div class="play-icon" id="playIcon" style="display: none"></div>
         </div>
-      </div>
-      <div class="video-overlay"></div>
-    </section>
+        <div class="video-overlay"></div>
+      </section>
 
-    <!-- Services Section -->
-    <section class="services-section">
-      <div class="services-container">
-        <div class="service-item">
-          <div class="service-icon">
-            <svg
-              width="60"
-              height="60"
-              viewBox="0 0 80 80"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <circle cx="40" cy="40" r="30"></circle>
-              <circle cx="40" cy="40" r="20"></circle>
-              <circle cx="40" cy="40" r="10"></circle>
-              <line x1="40" y1="10" x2="40" y2="25"></line>
-              <line x1="40" y1="55" x2="40" y2="70"></line>
-              <line x1="10" y1="40" x2="25" y2="40"></line>
-              <line x1="55" y1="40" x2="70" y2="40"></line>
-              <path
-                d="M 50 25 L 60 15 M 25 50 L 15 60 M 50 55 L 60 65 M 25 30 L 15 20"
-              ></path>
-              <circle cx="58" cy="22" r="6"></circle>
-              <circle cx="22" cy="58" r="6"></circle>
-              <circle cx="58" cy="58" r="6"></circle>
-              <circle cx="22" cy="22" r="6"></circle>
-            </svg>
+      <!-- Services Section -->
+      <section class="services-section">
+        <div class="services-container">
+          <div class="service-item">
+            <div class="service-icon">
+              <svg
+                width="60"
+                height="60"
+                viewBox="0 0 80 80"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="40" cy="40" r="30"></circle>
+                <circle cx="40" cy="40" r="20"></circle>
+                <circle cx="40" cy="40" r="10"></circle>
+                <line x1="40" y1="10" x2="40" y2="25"></line>
+                <line x1="40" y1="55" x2="40" y2="70"></line>
+                <line x1="10" y1="40" x2="25" y2="40"></line>
+                <line x1="55" y1="40" x2="70" y2="40"></line>
+                <path
+                  d="M 50 25 L 60 15 M 25 50 L 15 60 M 50 55 L 60 65 M 25 30 L 15 20"
+                ></path>
+                <circle cx="58" cy="22" r="6"></circle>
+                <circle cx="22" cy="58" r="6"></circle>
+                <circle cx="58" cy="58" r="6"></circle>
+                <circle cx="22" cy="22" r="6"></circle>
+              </svg>
+            </div>
+            <h3 class="service-title">POST SUPERVISION</h3>
           </div>
-          <h3 class="service-title">POST SUPERVISION</h3>
-        </div>
 
-        <div class="service-item">
-          <div class="service-icon">
-            <svg
-              width="60"
-              height="60"
-              viewBox="0 0 80 80"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <circle cx="40" cy="40" r="30"></circle>
-              <polygon points="35,28 35,52 55,40" fill="currentColor"></polygon>
-            </svg>
+          <div class="service-item">
+            <div class="service-icon">
+              <svg
+                width="60"
+                height="60"
+                viewBox="0 0 80 80"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="40" cy="40" r="30"></circle>
+                <polygon
+                  points="35,28 35,52 55,40"
+                  fill="currentColor"
+                ></polygon>
+              </svg>
+            </div>
+            <h3 class="service-title">EDITORIAL</h3>
           </div>
-          <h3 class="service-title">EDITORIAL</h3>
-        </div>
 
-        <div class="service-item">
-          <div class="service-icon">
-            <svg
-              width="60"
-              height="60"
-              viewBox="0 0 80 80"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <circle cx="40" cy="40" r="30"></circle>
-              <line x1="40" y1="25" x2="40" y2="55" stroke-width="3"></line>
-              <line x1="25" y1="40" x2="55" y2="40" stroke-width="3"></line>
-            </svg>
+          <div class="service-item">
+            <div class="service-icon">
+              <svg
+                width="60"
+                height="60"
+                viewBox="0 0 80 80"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="40" cy="40" r="30"></circle>
+                <line x1="40" y1="25" x2="40" y2="55" stroke-width="3"></line>
+                <line x1="25" y1="40" x2="55" y2="40" stroke-width="3"></line>
+              </svg>
+            </div>
+            <h3 class="service-title">MOTION/VFX</h3>
           </div>
-          <h3 class="service-title">MOTION/VFX</h3>
-        </div>
 
-        <div class="service-item">
-          <div class="service-icon">
-            <svg
-              width="60"
-              height="60"
-              viewBox="0 0 80 80"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <circle cx="40" cy="40" r="30"></circle>
-              <circle cx="40" cy="32" r="12" fill="currentColor"></circle>
-              <path
-                d="M 40 44 Q 50 50, 55 60 L 25 60 Q 30 50, 40 44"
-                fill="currentColor"
-              ></path>
-            </svg>
+          <div class="service-item">
+            <div class="service-icon">
+              <svg
+                width="60"
+                height="60"
+                viewBox="0 0 80 80"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="40" cy="40" r="30"></circle>
+                <circle cx="40" cy="32" r="12" fill="currentColor"></circle>
+                <path
+                  d="M 40 44 Q 50 50, 55 60 L 25 60 Q 30 50, 40 44"
+                  fill="currentColor"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="service-title">COLOR</h3>
           </div>
-          <h3 class="service-title">COLOR</h3>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <!--  -->
+      <!-- How It Works Section -->
+      <section id="how-it-works" class="section services-section">
+        <h2 class="section-title">How It Works</h2>
+        <div class="steps-container services-container">
+          <div class="step-card">
+            <img
+              src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=80&h=80&fit=crop"
+              alt="Browse Icon"
+              class="step-icon"
+            />
+            <h3>Browse Short Films</h3>
+            <p>Find the perfect film</p>
+          </div>
+          <div class="step-card">
+            <img
+              src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=80&h=80&fit=crop"
+              alt="Play Icon"
+              class="step-icon"
+            />
+            <h3>Select & Play</h3>
+            <p>Click and watch instantly</p>
+          </div>
+          <div class="step-card">
+            <img
+              src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=80&h=80&fit=crop"
+              alt="Share Icon"
+              class="step-icon"
+            />
+            <h3>Share & Enjoy</h3>
+            <p>Share with friends</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why Choose Us Section -->
+      <section id="why-choose-us" class="section">
+        <h2 class="section-title">Why Choose Us</h2>
+        <div class="features-container services-container">
+          <div class="feature-card">
+            <img
+              src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=80&h=80&fit=crop"
+              alt="Streaming Icon"
+              class="feature-icon"
+            />
+            <h3>Fast & Seamless Streaming</h3>
+            <p>
+              Enjoy high-quality films without buffering or lag, anytime,
+              anywhere
+            </p>
+          </div>
+          <div class="feature-card">
+            <img
+              src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=80&h=80&fit=crop"
+              alt="Curated Icon"
+              class="feature-icon"
+            />
+            <h3>Curated Short Films</h3>
+            <p>Every short film is handpicked for entertainment and quality</p>
+          </div>
+          <div class="feature-card">
+            <img
+              src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=80&h=80&fit=crop"
+              alt="Ad-Free Icon"
+              class="feature-icon"
+            />
+            <h3>Ad-Free Viewing</h3>
+            <p>
+              Watch short films without interruptions, fully focused on the
+              story
+            </p>
+          </div>
+          <div class="feature-card">
+            <img
+              src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=60&h=60&fit=crop"
+              alt="Anywhere Icon"
+              class="feature-icon"
+            />
+            <h3>Watch Anywhere</h3>
+            <p>Anytime on mobile, tablet, or desktop</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials Section -->
+      <section id="testimonials" class="section">
+        <h2 class="section-title">Testimonials</h2>
+        <div id="testimonials-grid" class="testimonials-container services-container">
+          <!-- Testimonials will be populated by JavaScript -->
+        </div>
+      </section>
+      
+      <!-- FAQs Section -->
+      <section id="faqs" class="section">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="" id="faqs-grid" >
+          <div class="faq-item">
+            <div class="question">
+              What kind of short films can I watch here?
+              <span class="toggle">+</span>
+            </div>
+            <div class="answer">
+              Our platform showcases independent and emerging
+              filmmakers—featuring a variety of genres like drama, thriller, and
+              social stories.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="question">
+              Do I need a subscription to watch films?
+              <span class="toggle">+</span>
+            </div>
+            <div class="answer">
+              Free content is available, but certain premium films require a
+              subscription or one-time payment.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="question">
+              Can I submit my films?
+              <span class="toggle">+</span>
+            </div>
+            <div class="answer">
+              Yes! Our platform nurtures creators and emerging filmmakers—Submit
+              through the "Submit" section by filling out the form.
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--  -->
 
     <!-- Footer -->
     <footer class="footer">
@@ -254,5 +659,7 @@
     <script src="./js/components/home.js"></script>
     <script src="./js/modules/api.js"></script>
     <script src="./js/components/footer.js"></script>
+    <script src="./js/components/testimonials.js"></script>
+    
   </body>
 </html>
