@@ -1,7 +1,7 @@
 /* Navigation Header */
 .main-header {
-  background-color: #1a1a1a;
-  border-bottom: 1px solid #333;
+  /* background-color: #1a1a1a; */
+  /* border-bottom: 1px solid #333; */
   position: fixed;
   top: 0;
   left: 0;
@@ -76,7 +76,7 @@
   align-items: center;
   gap: 8px;
   padding: 12px 32px;
-  color: #999;
+  color: #fff;
   text-decoration: none;
   font-size: 13px;
   font-weight: 500;
@@ -96,7 +96,7 @@
 
 .nav-link.active {
   color: #fff;
-  border: 1px solid #555;
+  border: 1px solid #fff;
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.03);
 }
@@ -154,7 +154,7 @@
 
   .nav-link:hover,
   .nav-link.active {
-    border-radius: 0;
+    border-radius: 10px;
   }
 }
 
@@ -167,6 +167,7 @@
   .nav-link {
     font-size: 12px;
     padding: 14px 16px;
+    border-radius: 10px;
   }
 
   .nav-icon {
