@@ -10,14 +10,27 @@ document.addEventListener("DOMContentLoaded", function () {
     const filteredData =
       filter === "all" ? data : data.filter((item) => item.category === filter);
 
+    // IntersectionObserver for reveal-on-scroll
+    const revealObserver = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("revealed");
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -10% 0px" }
+    );
+
     filteredData.forEach((item, index) => {
       const portfolioItem = document.createElement("div");
       const queryString = `${item.id}&video=${
         item.videoPath
       }&title=${item?.title?.split(" ").join("-")?.toLowerCase()}`;
-      portfolioItem.className = `portfolio-item  normal`;
-      portfolioItem.style.animationDelay = `${index * 0.1}s`;
-      portfolioItem.style.animationDelay = `${index * 0.1}s`;
+      portfolioItem.className = `portfolio-item normal`;
+      // Staggered reveal per item; applies when .revealed triggers animation
+      portfolioItem.style.animationDelay = `${index * 0.08}s`;
 
       portfolioItem.innerHTML = `
                 <a href="/portfolio-item.html?id=${queryString}">
@@ -33,6 +46,9 @@ document.addEventListener("DOMContentLoaded", function () {
             `;
 
       portfolioGrid.appendChild(portfolioItem);
+
+      // Observe for reveal-on-scroll
+      revealObserver.observe(portfolioItem);
     });
 
     // Add click event to portfolio items
@@ -57,14 +73,8 @@ document.addEventListener("DOMContentLoaded", function () {
       // Get filter value
       const filter = this.getAttribute("data-filter");
 
-      // Fade out animation
-      portfolioGrid.style.opacity = "0";
-
-      // Render filtered portfolio after fade out
-      setTimeout(() => {
-        renderPortfolio(filter);
-        portfolioGrid.style.opacity = "1";
-      }, 300);
+      // Render filtered portfolio immediately with item-level reveal
+      renderPortfolio(filter);
     });
   });
 
