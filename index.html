@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="./css/components/footer.css" />
     <link rel="stylesheet" href="./css/components/home.css" />
     <link rel="stylesheet" href="./css/components/responsive.css" />
-  
   </head>
   <body>
     <!-- Navigation Header -->
@@ -26,7 +25,7 @@
         <span></span>
       </button>
       <div class="logo">
-          <a href="/">
+        <a href="/">
           <img src="./assets/development/logo.png" alt="logo" />
         </a>
       </div>
@@ -100,253 +99,262 @@
       </nav>
     </header>
 
-    <main>
-      <!-- Video Hero Section -->
-      <section class="hero-section">
-        <div class="video-container" id="videoContainer">
-          <iframe
-            id="vimeoVideo"
-            frameborder="0"
-            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-            allowfullscreen
-            title="You can Pause and Play the Video"            
-          ></iframe>
+    <!-- Video Hero Section -->
+    <section class="hero-section">
+      <div class="video-container" id="videoContainer">
+        <!-- Loading Spinner -->
+        <div id="videoLoadingSpinner" class="video-loading-spinner">
+          <div class="spinner"></div>
+        </div>
+        <iframe
+          id="vimeoVideo"
+          src="https://player.vimeo.com/video/191064522"
+          frameborder="0"
+          allow="autoplay; fullscreen; clipboard-write; encrypted-media;"
+          title="You can Pause and Play the Video"
+        ></iframe>
 
-          <!-- Custom Play/Pause Icon -->
-          <div class="play-pause-icon" id="playPauseIcon">
-            <div class="pause-icon" id="pauseIcon">
-              <div class="pause-bar"></div>
-              <div class="pause-bar"></div>
-            </div>
-            <div class="play-icon" id="playIcon" style="display: none"></div>
+        <!-- Custom Play/Pause Icon -->
+        <div class="play-pause-icon" id="playPauseIcon">
+          <img
+            src="./assets/development/play-button.png"
+            class="control-icon"
+            id="playIcon"
+            alt="Play"
+          />
+          <img
+            src="./assets/development/pause-button.png"
+            class="control-icon"
+            id="pauseIcon"
+            alt="Pause"
+          />
+        </div>
+      </div>
+
+      <div class="video-overlay"></div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+      <div class="services-container">
+        <div class="service-item">
+          <div class="service-icon">
+            <svg
+              width="60"
+              height="60"
+              viewBox="0 0 80 80"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="40" cy="40" r="30"></circle>
+              <circle cx="40" cy="40" r="20"></circle>
+              <circle cx="40" cy="40" r="10"></circle>
+              <line x1="40" y1="10" x2="40" y2="25"></line>
+              <line x1="40" y1="55" x2="40" y2="70"></line>
+              <line x1="10" y1="40" x2="25" y2="40"></line>
+              <line x1="55" y1="40" x2="70" y2="40"></line>
+              <path
+                d="M 50 25 L 60 15 M 25 50 L 15 60 M 50 55 L 60 65 M 25 30 L 15 20"
+              ></path>
+              <circle cx="58" cy="22" r="6"></circle>
+              <circle cx="22" cy="58" r="6"></circle>
+              <circle cx="58" cy="58" r="6"></circle>
+              <circle cx="22" cy="22" r="6"></circle>
+            </svg>
+          </div>
+          <h3 class="service-title">POST SUPERVISION</h3>
+        </div>
+
+        <div class="service-item">
+          <div class="service-icon">
+            <svg
+              width="60"
+              height="60"
+              viewBox="0 0 80 80"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="40" cy="40" r="30"></circle>
+              <polygon points="35,28 35,52 55,40" fill="currentColor"></polygon>
+            </svg>
+          </div>
+          <h3 class="service-title">EDITORIAL</h3>
+        </div>
+
+        <div class="service-item">
+          <div class="service-icon">
+            <svg
+              width="60"
+              height="60"
+              viewBox="0 0 80 80"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="40" cy="40" r="30"></circle>
+              <line x1="40" y1="25" x2="40" y2="55" stroke-width="3"></line>
+              <line x1="25" y1="40" x2="55" y2="40" stroke-width="3"></line>
+            </svg>
+          </div>
+          <h3 class="service-title">MOTION/VFX</h3>
+        </div>
+
+        <div class="service-item">
+          <div class="service-icon">
+            <svg
+              width="60"
+              height="60"
+              viewBox="0 0 80 80"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="40" cy="40" r="30"></circle>
+              <circle cx="40" cy="32" r="12" fill="currentColor"></circle>
+              <path
+                d="M 40 44 Q 50 50, 55 60 L 25 60 Q 30 50, 40 44"
+                fill="currentColor"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="service-title">COLOR</h3>
+        </div>
+      </div>
+    </section>
+
+    <!--  -->
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="section services-section">
+      <h2 class="section-title">How It Works</h2>
+      <div class="steps-container services-container">
+        <div class="step-card">
+          <img
+            src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=80&h=80&fit=crop"
+            alt="Browse Icon"
+            class="step-icon"
+          />
+          <h3>Browse Short Films</h3>
+          <p>Find the perfect film</p>
+        </div>
+        <div class="step-card">
+          <img
+            src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=80&h=80&fit=crop"
+            alt="Play Icon"
+            class="step-icon"
+          />
+          <h3>Select & Play</h3>
+          <p>Click and watch instantly</p>
+        </div>
+        <div class="step-card">
+          <img
+            src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=80&h=80&fit=crop"
+            alt="Share Icon"
+            class="step-icon"
+          />
+          <h3>Share & Enjoy</h3>
+          <p>Share with friends</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-choose-us" class="section">
+      <h2 class="section-title">Why Choose Us</h2>
+      <div class="features-container services-container">
+        <div class="feature-card">
+          <img
+            src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=80&h=80&fit=crop"
+            alt="Streaming Icon"
+            class="feature-icon"
+          />
+          <h3>Fast & Seamless Streaming</h3>
+          <p>
+            Enjoy high-quality films without buffering or lag, anytime, anywhere
+          </p>
+        </div>
+        <div class="feature-card">
+          <img
+            src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=80&h=80&fit=crop"
+            alt="Curated Icon"
+            class="feature-icon"
+          />
+          <h3>Curated Short Films</h3>
+          <p>Every short film is handpicked for entertainment and quality</p>
+        </div>
+        <div class="feature-card">
+          <img
+            src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=80&h=80&fit=crop"
+            alt="Ad-Free Icon"
+            class="feature-icon"
+          />
+          <h3>Ad-Free Viewing</h3>
+          <p>
+            Watch short films without interruptions, fully focused on the story
+          </p>
+        </div>
+        <div class="feature-card">
+          <img
+            src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=60&h=60&fit=crop"
+            alt="Anywhere Icon"
+            class="feature-icon"
+          />
+          <h3>Watch Anywhere</h3>
+          <p>Anytime on mobile, tablet, or desktop</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section">
+      <h2 class="section-title">Testimonials</h2>
+      <div
+        id="testimonials-grid"
+        class="testimonials-container services-container"
+      >
+        <!-- Testimonials will be populated by JavaScript -->
+      </div>
+    </section>
+
+    <!-- FAQs Section -->
+    <section id="faqs" class="section">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div id="faqs-grid">
+        <div class="faq-item">
+          <div class="question">
+            What kind of short films can I watch here?
+            <span class="toggle">+</span>
+          </div>
+          <div class="answer">
+            Our platform showcases independent and emerging filmmakers—featuring
+            a variety of genres like drama, thriller, and social stories.
           </div>
         </div>
-        <div class="video-overlay"></div>
-      </section>
-
-      <!-- Services Section -->
-      <section class="services-section">
-        <div class="services-container">
-          <div class="service-item">
-            <div class="service-icon">
-              <svg
-                width="60"
-                height="60"
-                viewBox="0 0 80 80"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <circle cx="40" cy="40" r="30"></circle>
-                <circle cx="40" cy="40" r="20"></circle>
-                <circle cx="40" cy="40" r="10"></circle>
-                <line x1="40" y1="10" x2="40" y2="25"></line>
-                <line x1="40" y1="55" x2="40" y2="70"></line>
-                <line x1="10" y1="40" x2="25" y2="40"></line>
-                <line x1="55" y1="40" x2="70" y2="40"></line>
-                <path
-                  d="M 50 25 L 60 15 M 25 50 L 15 60 M 50 55 L 60 65 M 25 30 L 15 20"
-                ></path>
-                <circle cx="58" cy="22" r="6"></circle>
-                <circle cx="22" cy="58" r="6"></circle>
-                <circle cx="58" cy="58" r="6"></circle>
-                <circle cx="22" cy="22" r="6"></circle>
-              </svg>
-            </div>
-            <h3 class="service-title">POST SUPERVISION</h3>
+        <div class="faq-item">
+          <div class="question">
+            Do I need a subscription to watch films?
+            <span class="toggle">+</span>
           </div>
-
-          <div class="service-item">
-            <div class="service-icon">
-              <svg
-                width="60"
-                height="60"
-                viewBox="0 0 80 80"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <circle cx="40" cy="40" r="30"></circle>
-                <polygon
-                  points="35,28 35,52 55,40"
-                  fill="currentColor"
-                ></polygon>
-              </svg>
-            </div>
-            <h3 class="service-title">EDITORIAL</h3>
-          </div>
-
-          <div class="service-item">
-            <div class="service-icon">
-              <svg
-                width="60"
-                height="60"
-                viewBox="0 0 80 80"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <circle cx="40" cy="40" r="30"></circle>
-                <line x1="40" y1="25" x2="40" y2="55" stroke-width="3"></line>
-                <line x1="25" y1="40" x2="55" y2="40" stroke-width="3"></line>
-              </svg>
-            </div>
-            <h3 class="service-title">MOTION/VFX</h3>
-          </div>
-
-          <div class="service-item">
-            <div class="service-icon">
-              <svg
-                width="60"
-                height="60"
-                viewBox="0 0 80 80"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <circle cx="40" cy="40" r="30"></circle>
-                <circle cx="40" cy="32" r="12" fill="currentColor"></circle>
-                <path
-                  d="M 40 44 Q 50 50, 55 60 L 25 60 Q 30 50, 40 44"
-                  fill="currentColor"
-                ></path>
-              </svg>
-            </div>
-            <h3 class="service-title">COLOR</h3>
+          <div class="answer">
+            Free content is available, but certain premium films require a
+            subscription or one-time payment.
           </div>
         </div>
-      </section>
+        <div class="faq-item">
+          <div class="question">
+            Can I submit my films?
+            <span class="toggle">+</span>
+          </div>
+          <div class="answer">
+            Yes! Our platform nurtures creators and emerging filmmakers—Submit
+            through the "Submit" section by filling out the form.
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <!--  -->
-      <!-- How It Works Section -->
-      <section id="how-it-works" class="section services-section">
-        <h2 class="section-title">How It Works</h2>
-        <div class="steps-container services-container">
-          <div class="step-card">
-            <img
-              src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=80&h=80&fit=crop"
-              alt="Browse Icon"
-              class="step-icon"
-            />
-            <h3>Browse Short Films</h3>
-            <p>Find the perfect film</p>
-          </div>
-          <div class="step-card">
-            <img
-              src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=80&h=80&fit=crop"
-              alt="Play Icon"
-              class="step-icon"
-            />
-            <h3>Select & Play</h3>
-            <p>Click and watch instantly</p>
-          </div>
-          <div class="step-card">
-            <img
-              src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=80&h=80&fit=crop"
-              alt="Share Icon"
-              class="step-icon"
-            />
-            <h3>Share & Enjoy</h3>
-            <p>Share with friends</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Why Choose Us Section -->
-      <section id="why-choose-us" class="section">
-        <h2 class="section-title">Why Choose Us</h2>
-        <div class="features-container services-container">
-          <div class="feature-card">
-            <img
-              src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=80&h=80&fit=crop"
-              alt="Streaming Icon"
-              class="feature-icon"
-            />
-            <h3>Fast & Seamless Streaming</h3>
-            <p>
-              Enjoy high-quality films without buffering or lag, anytime,
-              anywhere
-            </p>
-          </div>
-          <div class="feature-card">
-            <img
-              src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=80&h=80&fit=crop"
-              alt="Curated Icon"
-              class="feature-icon"
-            />
-            <h3>Curated Short Films</h3>
-            <p>Every short film is handpicked for entertainment and quality</p>
-          </div>
-          <div class="feature-card">
-            <img
-              src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=80&h=80&fit=crop"
-              alt="Ad-Free Icon"
-              class="feature-icon"
-            />
-            <h3>Ad-Free Viewing</h3>
-            <p>
-              Watch short films without interruptions, fully focused on the
-              story
-            </p>
-          </div>
-          <div class="feature-card">
-            <img
-              src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=60&h=60&fit=crop"
-              alt="Anywhere Icon"
-              class="feature-icon"
-            />
-            <h3>Watch Anywhere</h3>
-            <p>Anytime on mobile, tablet, or desktop</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Testimonials Section -->
-      <section id="testimonials" class="section">
-        <h2 class="section-title">Testimonials</h2>
-        <div id="testimonials-grid" class="testimonials-container services-container">
-          <!-- Testimonials will be populated by JavaScript -->
-        </div>
-      </section>
-      
-      <!-- FAQs Section -->
-      <section id="faqs" class="section">
-        <h2 class="section-title">Frequently Asked Questions</h2>
-        <div class="" id="faqs-grid" >
-          <div class="faq-item">
-            <div class="question">
-              What kind of short films can I watch here?
-              <span class="toggle">+</span>
-            </div>
-            <div class="answer">
-              Our platform showcases independent and emerging
-              filmmakers—featuring a variety of genres like drama, thriller, and
-              social stories.
-            </div>
-          </div>
-          <div class="faq-item">
-            <div class="question">
-              Do I need a subscription to watch films?
-              <span class="toggle">+</span>
-            </div>
-            <div class="answer">
-              Free content is available, but certain premium films require a
-              subscription or one-time payment.
-            </div>
-          </div>
-          <div class="faq-item">
-            <div class="question">
-              Can I submit my films?
-              <span class="toggle">+</span>
-            </div>
-            <div class="answer">
-              Yes! Our platform nurtures creators and emerging filmmakers—Submit
-              through the "Submit" section by filling out the form.
-            </div>
-          </div>
-        </div>
-      </section>
-      <!--  -->
+    <!--  -->
 
     <!-- Footer -->
     <footer class="footer">
@@ -386,15 +394,13 @@
         </div>
       </div>
     </footer>
-<button id="backToTop" onclick="scrollToTop()">
-  <img src="./assets/development/arrow-up.svg" alt="Back to top" />
-</button>
-<!-- Vimeo Player API -->
-<script src="https://player.vimeo.com/api/player.js"></script>
-<script src="./js/components/home.js"></script>
-<script src="./js/modules/api.js"></script>
-<script src="./js/components/footer.js"></script>
-<script src="./js/components/testimonials.js"></script>
-    
+    <button id="backToTop" onclick="scrollToTop()">
+      <img src="./assets/development/arrow-up.svg" alt="Back to top" />
+    </button>
+    <script src="https://player.vimeo.com/api/player.js"></script>
+    <script src="./js/components/home.js"></script>
+    <script src="./js/modules/api.js"></script>
+    <script src="./js/components/footer.js"></script>
+    <script src="./js/components/testimonials.js"></script>
   </body>
 </html>

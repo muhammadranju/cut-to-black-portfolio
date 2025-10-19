@@ -1,84 +1,130 @@
-let player;
-let isPlaying = true;
-let iconTimeout;
-
 // Initialize Vimeo Player
 const iframe = document.getElementById("vimeoVideo");
-player = new Vimeo.Player(iframe);
-
-// Set initial state - video is playing, so show pause icon initially
-player.on("loaded", function () {
-  player.play();
-  isPlaying = true;
-  // Initially show pause icon since video is playing
-  playIcon.style.display = "none";
-  pauseIcon.style.display = "flex";
-});
-
-// Track play state
-player.on("play", function () {
-  isPlaying = true;
-});
-
-player.on("pause", function () {
-  isPlaying = false;
-});
-
-// Video container click handler
 const videoContainer = document.getElementById("videoContainer");
 const playPauseIcon = document.getElementById("playPauseIcon");
 const playIcon = document.getElementById("playIcon");
 const pauseIcon = document.getElementById("pauseIcon");
+const loadingSpinner = document.getElementById("videoLoadingSpinner");
 
+let player;
+let isPlaying = false;
+let iconTimeout;
+player = new Vimeo.Player(iframe);
+
+// Function to show icon with fadeout
+function showIconWithFadeout() {
+  // Clear any existing timeout
+  clearTimeout(iconTimeout);
+
+  // Show icon
+  playPauseIcon.style.opacity = "1";
+  playPauseIcon.style.display = "flex";
+
+  // Set timeout to hide icon
+  iconTimeout = setTimeout(() => {
+    playPauseIcon.style.opacity = "0";
+    setTimeout(() => {
+      playPauseIcon.style.display = "none";
+    }, 300); // Wait for fade out animation
+  }, 300); // Show for 2 seconds
+}
+
+// Update icon based on play state
+function updatePlayPauseIcon(isPlaying) {
+  if (isPlaying) {
+    playIcon.style.display = "none";
+    pauseIcon.style.display = "block";
+  } else {
+    playIcon.style.display = "block";
+    pauseIcon.style.display = "none";
+  }
+  showIconWithFadeout();
+}
+
+// Initial setup when video is loaded
+player.on("loaded", function () {
+  if (loadingSpinner) loadingSpinner.style.display = "none";
+  player.play();
+  isPlaying = true;
+  updatePlayPauseIcon(true);
+});
+
+// Fallback: hide spinner after 2 seconds if not loaded
+setTimeout(function () {
+  if (loadingSpinner && loadingSpinner.style.display !== "none") {
+    loadingSpinner.style.display = "none";
+  }
+}, 2000);
+
+// Track play state
+player.on("play", function () {
+  isPlaying = true;
+  updatePlayPauseIcon(true);
+});
+
+player.on("pause", function () {
+  isPlaying = false;
+  updatePlayPauseIcon(false);
+});
+
+// Show icon on mouse move
+let mouseMoveTimeout;
+videoContainer.addEventListener("mousemove", function () {
+  clearTimeout(mouseMoveTimeout);
+  showIconWithFadeout();
+
+  mouseMoveTimeout = setTimeout(() => {
+    if (isPlaying) {
+      playPauseIcon.style.opacity = "0";
+      setTimeout(() => {
+        playPauseIcon.style.display = "none";
+      }, 300);
+    }
+  }, 300);
+});
+
+// Video container click handler
 videoContainer.addEventListener("click", function (e) {
   if (!player) return;
 
-  // Prevent default behavior
   e.preventDefault();
   e.stopPropagation();
 
-  // Clear any existing timeout
-  clearTimeout(iconTimeout);
-  playPauseIcon.classList.remove("fade-out");
+  if (isPlaying) {
+    player.pause();
+  } else {
+    player.play();
+  }
+});
 
-  player.getPaused().then(function (paused) {
-    if (!paused) {
-      // Video is PLAYING, so pause it
-      player.pause().then(function () {
-        isPlaying = false;
-        // Video is NOW PAUSED - Show PLAY icon
-        playIcon.style.display = "block";
-        pauseIcon.style.display = "none";
-        showIconTemporarily();
-      });
-    } else {
-      // Video is PAUSED, so play it
-      player.play().then(function () {
-        isPlaying = true;
-        // Video is NOW PLAYING - Show PAUSE icon
-        pauseIcon.style.display = "flex";
-        playIcon.style.display = "none";
-        showIconTemporarily();
-      });
-    }
+// Initialize navigation active state
+document.addEventListener("DOMContentLoaded", function () {
+  const navLinks = document.querySelectorAll(".nav-link");
+  navLinks.forEach((link) => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      navLinks.forEach((nav) => nav.classList.remove("active"));
+      this.classList.add("active");
+    });
   });
 });
 
-function showIconTemporarily() {
-  // Show icon immediately
-  playPauseIcon.classList.add("show");
-
-  // Hide icon after 1.5 seconds with fade out
-  iconTimeout = setTimeout(function () {
-    playPauseIcon.classList.remove("show");
-    playPauseIcon.classList.add("fade-out");
-
-    // Remove fade-out class after animation completes
-    setTimeout(function () {
-      playPauseIcon.classList.remove("fade-out");
-    }, 500);
-  }, 1500);
+// Back to Top functionality
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
 }
+
+window.onscroll = function () {
+  const button = document.getElementById("backToTop");
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    button.style.display = "block";
+  } else {
+    button.style.display = "none";
+  }
+};
 
 // Navigation active state management
 document.addEventListener("DOMContentLoaded", function () {

@@ -1,8 +1,9 @@
 /* Hero Section */
 .hero-section {
   position: relative;
-  height: 60vh;
-  min-height: 500px;
+  height: 50vh;
+  min-height: 760px;
+  margin-top: 80px;
   background-image: url("https://images.unsplash.com/photo-1745750747043-da33e463f361");
   background-size: cover;
   background-position: center;

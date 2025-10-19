@@ -2,8 +2,9 @@
 .portfolio-hero {
   position: relative;
   width: 100%;
-  height: 60vh;
-  min-height: 500px;
+  height: 50vh;
+  min-height: 760px;
+  margin-top: 80px;
   background-image: url("https://images.unsplash.com/photo-1760340642096-fa5ccff5b8e4");
   background-size: cover;
   background-position: center;
@@ -106,7 +107,7 @@
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 10px;
   animation: fadeIn 0.8s ease-out;
 }
 
@@ -128,7 +129,7 @@
   background-color: #1a1a1a;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   animation: scaleIn 0.5s ease-out backwards;
-  aspect-ratio: 16 / 9; /* Uniform aspect ratio for video embeds like YouTube */
+  aspect-ratio: 16 / 13; /* Uniform aspect ratio for video embeds like YouTube */
   display: flex;
   align-items: center;
   justify-content: center;

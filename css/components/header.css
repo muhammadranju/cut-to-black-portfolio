@@ -1,7 +1,10 @@
 /* Navigation Header */
 .main-header {
-  /* background-color: #1a1a1a; */
+  /* background-color: rgba(26, 26, 26, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); */
   /* border-bottom: 1px solid #333; */
+  box-shadow: none;
   position: fixed;
   top: 0;
   left: 0;

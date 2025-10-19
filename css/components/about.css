@@ -1,9 +1,9 @@
 /* Hero About Section */
 .about-hero {
   position: relative;
-  height: 60vh;
-  min-height: 500px;
-
+  height: 50vh;
+  min-height: 760px;
+  margin-top: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
