@@ -97,15 +97,25 @@ videoContainer.addEventListener("click", function (e) {
   }
 });
 
-// Initialize navigation active state
+// Initialize navigation active state based on current URL (no click interception)
 document.addEventListener("DOMContentLoaded", function () {
   const navLinks = document.querySelectorAll(".nav-link");
+  const current = window.location.pathname.split("/").pop() || "index.html";
+
   navLinks.forEach((link) => {
-    link.addEventListener("click", function (e) {
-      e.preventDefault();
-      navLinks.forEach((nav) => nav.classList.remove("active"));
-      this.classList.add("active");
-    });
+    const href = link.getAttribute("href");
+    let target;
+    if (href === "/" || href === "./" || href === "") {
+      target = "index.html";
+    } else {
+      target = href.replace(/^\.\//, "").replace(/^\//, "");
+    }
+
+    if (target === current) {
+      link.classList.add("active");
+    } else {
+      link.classList.remove("active");
+    }
   });
 });
 
@@ -126,18 +136,8 @@ window.onscroll = function () {
   }
 };
 
-// Navigation active state management
-document.addEventListener("DOMContentLoaded", function () {
-  const navLinks = document.querySelectorAll(".nav-link");
+// Navigation active state management removed here to avoid duplicate handlers and allow link navigation
 
-  navLinks.forEach((link) => {
-    link.addEventListener("click", function (e) {
-      e.preventDefault();
-      navLinks.forEach((nav) => nav.classList.remove("active"));
-      this.classList.add("active");
-    });
-  });
-});
 
 // Back to Top functionality
 function scrollToTop() {
