@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
           }
         });
       },
-      { threshold: 0.1, rootMargin: "0px 0px -10% 0px" }
+      { threshold: 0.03, rootMargin: "0px 0px -20% 0px" }
     );
 
     filteredData.forEach((item, index) => {
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }&title=${item?.title?.split(" ").join("-")?.toLowerCase()}`;
       portfolioItem.className = `portfolio-item normal`;
       // Staggered reveal per item; applies when .revealed triggers animation
-      portfolioItem.style.animationDelay = `${index * 0.08}s`;
+      portfolioItem.style.animationDelay = `${index * 0.03}s`;
 
       portfolioItem.innerHTML = `
                 <a href="/portfolio-item.html?id=${queryString}">
