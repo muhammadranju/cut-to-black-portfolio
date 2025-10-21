@@ -572,23 +572,68 @@
 
   .video-container {
     position: absolute;
-    top: -30%;
-    left: 0;
+    top: -22%;
+    left: 5%;
     width: 100%;
     cursor: pointer;
+    margin: 0 auto;
+    background-color: #000;
   }
   .hero-section {
-    margin-bottom: -180px;
+    margin-bottom: -195px;
+    background-color: #000;
   }
   @media (max-aspect-ratio: 16/9) {
     .video-container iframe {
-      width: 70vh;
+      width: 90%;
     }
+  }
+  .video-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 150px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+    z-index: 1;
+    pointer-events: none;
+    display: none;
   }
   #faqs-grid {
     padding: 0 20px;
   }
   .question {
     padding: 20px;
+  }
+
+  .services-container-sm {
+    /* max-width: 1200px; */
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .service-icon svg {
+    width: 40%;
+    height: 40%;
+  }
+
+  .service-title {
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 0px;
+    color: #fff;
+    text-transform: uppercase;
+  }
+  .service-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.6s ease forwards;
+    gap: 0;
   }
 }

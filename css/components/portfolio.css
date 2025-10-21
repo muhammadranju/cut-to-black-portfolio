@@ -108,7 +108,7 @@
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  gap: 5px;
   perspective: 800px;
   animation: fadeIn 0.8s ease-out;
 }
@@ -130,15 +130,15 @@
   cursor: pointer;
   background-color: #1a1a1a;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  aspect-ratio: 16 / 9; /* Changed to standard video aspect ratio to reduce cropping on landscape images */
+  aspect-ratio: 16 / 12; /* Changed to standard video aspect ratio to reduce cropping on landscape images */
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .portfolio-item img {
-  width: 100%;
-  height: 100%;
+  width: 450px;
+  height: 350px;
   object-fit: cover;
   object-position: center;
   transition: transform 0.5s ease;
@@ -247,7 +247,7 @@
 @media (max-width: 1399px) {
   .portfolio-grid {
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 58px;
   }
 }
 

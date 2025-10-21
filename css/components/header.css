@@ -1,9 +1,5 @@
 /* Navigation Header */
 .main-header {
-  /* background-color: rgba(26, 26, 26, 0.8);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px); */
-  /* border-bottom: 1px solid #333; */
   box-shadow: none;
   position: fixed;
   top: 0;
@@ -14,6 +10,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.header-blur {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 /* Logo */
@@ -177,4 +177,12 @@
     width: 14px;
     height: 14px;
   }
+}
+
+.main-header,
+.main-header.scrolled,
+.main-header.shadow,
+.main-header::before,
+.main-header::after {
+  box-shadow: none !important;
 }

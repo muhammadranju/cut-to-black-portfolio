@@ -1,10 +1,11 @@
 const data = [
   {
     id: 1,
-    title: "Burnin' Trail",
+    title: "12 Mighty Orphans",
     category: "films",
     platform: "youtube",
-    image: "../assets/images/travel-login.jpg",
+    image:
+      "https://cuttoblack.com/wp-content/uploads/2023/01/12-mighty-1-705x565.png",
     videoPath: "pUEWTIciMZQ",
     description:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt neque officia repudiandae dolorum harum ex, nulla odio explicabo, a unde voluptate repellendus voluptas omnis eaque, fuga rerum cumque eveniet rem veritatis laborum nihil minus dolorem? Sunt illo ea beatae aliquid.",
@@ -14,7 +15,8 @@ const data = [
     id: 2,
     title: "Carousel",
     category: "films",
-    image: "../assets/images/travel-register.jpg",
+    image:
+      "https://cuttoblack.com/wp-content/uploads/2023/01/blazing-world-705x565.png",
     videoPath: "1127248459",
     platform: "vimeo",
     description:
@@ -26,7 +28,8 @@ const data = [
     title: "Wear The Future",
     category: "commercials",
     platform: "youtube",
-    image: "../assets/images/708392.webp",
+    image:
+      "https://cuttoblack.com/wp-content/uploads/2023/01/frank-and-penelope-705x565.png",
     videoPath: "jz9XUBUjTiM",
     description:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt neque officia repudiandae dolorum harum ex, nulla odio explicabo, a unde voluptate repellendus voluptas omnis eaque, fuga rerum cumque eveniet rem veritatis laborum nihil minus dolorem? Sunt illo ea beatae aliquid.",
@@ -37,7 +40,8 @@ const data = [
     title: "Action Hero",
     category: "motion-graphics",
     platform: "vimeo",
-    image: "../assets/images/J1jYLLlRpA4.jpg",
+    image:
+      "https://cuttoblack.com/wp-content/uploads/2023/01/hi-im-blake-705x565.png",
     videoPath: "352912827",
     description:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt neque officia repudiandae dolorum harum ex, nulla odio explicabo, a unde voluptate repellendus voluptas omnis eaque, fuga rerum cumque eveniet rem veritatis laborum nihil minus dolorem? Sunt illo ea beatae aliquid.",
@@ -49,7 +53,7 @@ const data = [
     category: "motion-graphics",
     platform: "vimeo",
     image:
-      "https://images.unsplash.com/photo-1535223289827-42f1e9919769?w=600&h=800&fit=crop",
+      "https://cuttoblack.com/wp-content/uploads/2023/10/AccidentalTexan_Poster-476x705.jpg",
     videoPath: "239818793",
     description:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt neque officia repudiandae dolorum harum ex, nulla odio explicabo, a unde voluptate repellendus voluptas omnis eaque, fuga rerum cumque eveniet rem veritatis laborum nihil minus dolorem? Sunt illo ea beatae aliquid.",
@@ -61,7 +65,7 @@ const data = [
     category: "motion-graphics",
     platform: "vimeo",
     image:
-      "https://images.unsplash.com/photo-1563207153-f403bf289096?w=600&h=800&fit=crop",
+      "https://cuttoblack.com/wp-content/uploads/2023/10/spyral-lobby-tv-705x397.png",
     videoPath: "191064522",
     description:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt neque officia repudiandae dolorum harum ex, nulla odio explicabo, a unde voluptate repellendus voluptas omnis eaque, fuga rerum cumque eveniet rem veritatis laborum nihil minus dolorem? Sunt illo ea beatae aliquid.",
@@ -73,7 +77,7 @@ const data = [
     category: "commercials",
     platform: "youtube",
     image:
-      "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=600&h=800&fit=crop",
+      "https://cuttoblack.com/wp-content/uploads/2024/03/Screen-Shot-2024-03-28-at-12.03.20-PM-705x394.png",
     videoPath: "dQw4w9WgXcQ",
     description:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt neque officia repudiandae dolorum harum ex, nulla odio explicabo, a unde voluptate repellendus voluptas omnis eaque, fuga rerum cumque eveniet rem veritatis laborum nihil minus dolorem? Sunt illo ea beatae aliquid.",
@@ -85,7 +89,7 @@ const data = [
     category: "editor",
     platform: "youtube",
     image:
-      "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=600&h=800&fit=crop",
+      "https://cuttoblack.com/wp-content/uploads/2024/03/Screen-Shot-2024-03-28-at-12.01.32-PM-705x390.png",
     videoPath: "dQw4w9WgXcQ",
     description:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt neque officia repudiandae dolorum harum ex, nulla odio explicabo, a unde voluptate repellendus voluptas omnis eaque, fuga rerum cumque eveniet rem veritatis laborum nihil minus dolorem? Sunt illo ea beatae aliquid.",
@@ -97,7 +101,7 @@ const data = [
     category: "post-supervisor",
     platform: "youtube",
     image:
-      "https://images.unsplash.com/photo-1524712245354-2c4e5e7121c0?w=600&h=800&fit=crop",
+      "https://cuttoblack.com/wp-content/uploads/2017/01/locked-in-a-garage-band-705x361.jpg",
     videoPath: "dQw4w9WgXcQ",
     description:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt neque officia repudiandae dolorum harum ex, nulla odio explicabo, a unde voluptate repellendus voluptas omnis eaque, fuga rerum cumque eveniet rem veritatis laborum nihil minus dolorem? Sunt illo ea beatae aliquid.",
@@ -109,7 +113,7 @@ const data = [
     category: "films",
     platform: "youtube",
     image:
-      "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800&h=600&fit=crop",
+      "https://cuttoblack.com/wp-content/uploads/2024/03/Screen-Shot-2024-03-28-at-4.24.33-PM-705x395.png",
     videoPath: "dQw4w9WgXcQ",
     description:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt neque officia repudiandae dolorum harum ex, nulla odio explicabo, a unde voluptate repellendus voluptas omnis eaque, fuga rerum cumque eveniet rem veritatis laborum nihil minus dolorem? Sunt illo ea beatae aliquid.",
@@ -121,7 +125,7 @@ const data = [
     category: "branded-documentaries",
     platform: "youtube",
     image:
-      "https://images.unsplash.com/photo-1518676590629-3dcbd9c5a5c9?w=600&h=800&fit=crop",
+      "https://cuttoblack.com/wp-content/uploads/2020/12/method-of-places-705x397.jpg",
     videoPath: "dQw4w9WgXcQ",
     description:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt neque officia repudiandae dolorum harum ex, nulla odio explicabo, a unde voluptate repellendus voluptas omnis eaque, fuga rerum cumque eveniet rem veritatis laborum nihil minus dolorem? Sunt illo ea beatae aliquid.",
