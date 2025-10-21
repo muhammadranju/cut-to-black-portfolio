@@ -135,23 +135,3 @@ window.onscroll = function () {
     button.style.display = "none";
   }
 };
-
-// Navigation active state management removed here to avoid duplicate handlers and allow link navigation
-
-
-// Back to Top functionality
-function scrollToTop() {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth",
-  });
-}
-
-window.onscroll = function () {
-  const button = document.getElementById("backToTop");
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    button.style.display = "block";
-  } else {
-    button.style.display = "none";
-  }
-};

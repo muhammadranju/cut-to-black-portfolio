@@ -130,10 +130,18 @@
   cursor: pointer;
   background-color: #1a1a1a;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  aspect-ratio: 16 / 13; /* Uniform aspect ratio for video embeds like YouTube */
+  aspect-ratio: 16 / 9; /* Changed to standard video aspect ratio to reduce cropping on landscape images */
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
 }
 
 @keyframes scaleIn {
@@ -150,6 +158,10 @@
 .portfolio-item:hover {
   transform: translateY(-10px);
   box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+}
+
+.portfolio-item:hover img {
+  transform: scale(1.05);
 }
 
 /* Remove spanning classes for uniform single card sizes */
@@ -382,6 +394,9 @@
 
   .portfolio-category {
     font-size: 0.7rem;
+  }
+  .portfolio-hero {
+    min-height: 450px;
   }
 }
 

@@ -23,14 +23,46 @@ document.addEventListener("DOMContentLoaded", function () {
       { threshold: 0.03, rootMargin: "0px 0px -20% 0px" }
     );
 
+    // Add static card first (always visible, independent of filter)
+    const staticItem = {
+      id: "001",
+      image:
+        "https://static.vecteezy.com/system/resources/previews/025/674/498/non_2x/upload-pdf-button-concept-illustration-line-icon-design-editable-eps10-vector.jpg",
+      title: "Upload PDF",
+      category: "special",
+      link: "/upload-pdf.html",
+    };
+    const staticPortfolioItem = document.createElement("div");
+
+    staticPortfolioItem.className = `portfolio-item normal static-item`;
+    // No delay for the first static item
+    staticPortfolioItem.style.animationDelay = `0s`;
+
+    staticPortfolioItem.innerHTML = `
+      <a href="${staticItem.link}">
+        <img src="${staticItem.image}" alt="${staticItem.title}" loading="lazy">
+        <div class="portfolio-overlay">
+          <h3 class="portfolio-title">${staticItem.title}</h3>
+          <p class="portfolio-category">${staticItem.category.replace(
+            "-",
+            " "
+          )}</p>
+        </div>
+      </a>
+    `;
+
+    portfolioGrid.appendChild(staticPortfolioItem);
+    revealObserver.observe(staticPortfolioItem);
+
+    // Then add dynamic items with staggered delays starting after static
     filteredData.forEach((item, index) => {
       const portfolioItem = document.createElement("div");
       const queryString = `${item.id}&video=${
         item.videoPath
       }&title=${item?.title?.split(" ").join("-")?.toLowerCase()}`;
       portfolioItem.className = `portfolio-item normal`;
-      // Staggered reveal per item; applies when .revealed triggers animation
-      portfolioItem.style.animationDelay = `${index * 0.03}s`;
+      // Staggered reveal starting from index 1 (after static)
+      portfolioItem.style.animationDelay = `${(index + 1) * 0.03}s`;
 
       portfolioItem.innerHTML = `
                 <a href="/portfolio-item.html?id=${queryString}">
