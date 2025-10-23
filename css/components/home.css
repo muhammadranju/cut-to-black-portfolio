@@ -575,7 +575,7 @@
 
   .video-container {
     position: absolute;
-    top: -5%;
+    top: -2%;
     left: 5%;
     width: 100%;
     cursor: pointer;
@@ -583,7 +583,7 @@
     background-color: #000;
   }
   .hero-section {
-    margin-bottom: -100px;
+    margin-bottom: -90px;
     background-color: #000;
   }
   @media (max-aspect-ratio: 16/9) {
