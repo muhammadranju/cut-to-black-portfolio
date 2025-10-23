@@ -177,6 +177,11 @@
     width: 14px;
     height: 14px;
   }
+
+  .main-header {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
 }
 
 .main-header,

@@ -59,7 +59,7 @@
   .hero-section {
     height: 50vh;
     min-height: 400px;
-    margin-top: 70px;
+    margin-top: 0px;
   }
 
   .hero-title {
@@ -111,6 +111,11 @@
   .services-container {
     grid-template-columns: 1fr;
     gap: 40px;
+  }
+
+  .services-container-sm {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
   }
 
   .service-icon {

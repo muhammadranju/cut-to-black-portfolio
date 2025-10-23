@@ -2,8 +2,7 @@
 .hero-section {
   position: relative;
   height: 50vh;
-  min-height: 760px;
-  margin-top: 80px;
+  min-height: 850px;
   background-image: url("https://images.unsplash.com/photo-1745750747043-da33e463f361");
   background-size: cover;
   background-position: center;
@@ -204,7 +203,7 @@
   .hero-section {
     height: 50vh;
     min-height: 400px;
-    margin-top: 70px;
+    margin-top: 700px;
   }
 
   .hero-title {
@@ -245,7 +244,6 @@
     align-items: center;
   }
 }
-
 /* Small Mobile Styles */
 @media (max-width: 480px) {
   .hero-title {
@@ -253,26 +251,35 @@
     letter-spacing: 3px;
   }
 
-  .services-container {
-    grid-template-columns: 1fr;
-    gap: 40px;
+  .service-item {
+    padding: 15px; /* Slightly reduced padding for compactness */
   }
 
   .service-icon {
-    width: 120px;
-    height: 120px;
+    width: 80px; /* Smaller icon size for mobile */
+    height: 80px;
   }
 
   .service-icon svg {
-    width: 70px;
-    height: 70px;
+    width: 50px; /* Smaller SVG size for mobile */
+    height: 50px;
+  }
+
+  .service-title {
+    font-size: 12px; /* Slightly smaller font size for mobile */
+    letter-spacing: 1.2px;
   }
 
   .description-text {
-    font-size: 16px;
+    font-size: 14px; /* Adjusted for better readability */
+    padding: 0 10px; /* Added padding for text alignment */
   }
 
   .footer-links li {
     font-size: 12px;
+  }
+  .hero-section {
+    margin-top: 700px;
+    min-height: 450px;
   }
 }

@@ -2,8 +2,7 @@
 .about-hero {
   position: relative;
   height: 50vh;
-  min-height: 760px;
-  margin-top: 80px;
+  min-height: 850px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -135,7 +134,8 @@
 
 /* Studio Section */
 .studio-section {
-  background-color: #2a2a2a;
+  /* background-color: #2a2a2a; */
+   background-color: #0a0a0a;
   padding: 80px 20px;
 }
 
@@ -220,7 +220,10 @@
 
 @media (max-width: 768px) {
   .about-hero {
-    height: 300px;
+    height: 350px;
+  }
+  .about-hero {
+    min-height: 600px;
   }
 
   .about-hero-title {
